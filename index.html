@@ -116,37 +116,68 @@
   </header>
 
   <main id="main-content">
-    <section class="hero section" aria-label="Hero">
-      <div class="container hero-grid">
-        <div class="hero-copy">
-          <p class="eyebrow">Established in 2010 | Tinley Park, Illinois</p>
-          <h1>Saltwater aquarium expertise, trusted by local hobbyists for years.</h1>
-          <p class="lead">
-            Rob's Aquatics is a neighborhood destination for livestock, reef-ready systems,
-            filtration support, and practical guidance that helps your aquarium stay healthy.
-          </p>
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="tel:+17084447627">(708) 444-7627</a>
-            <a
-              class="btn btn-secondary"
-              href="https://www.google.com/maps/dir/?api=1&destination=17135+S+Harlem+Ave+Tinley+Park+IL+60477"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Get Directions
-            </a>
+    <section class="hero-banner section" aria-label="Featured banner">
+      <div id="heroSlider" class="hero-slider">
+        <article class="hero-slide is-active" style="--hero-bg:url('assets/images/hero-1.jpg')">
+          <div class="hero-overlay"></div>
+          <div class="container hero-slide-content">
+            <p class="hero-kicker">Rob's Aquatics - Serving Tinley Park Since 2010</p>
+            <h1>Saltwater systems that look incredible and stay healthy.</h1>
+            <p>
+              Build your dream aquarium with trusted local guidance on fish, coral, filtration,
+              and long-term tank stability.
+            </p>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#contact">Discover More</a>
+              <a class="btn btn-secondary" href="tel:+17084447627">Call (708) 444-7627</a>
+            </div>
           </div>
-          <ul class="quick-facts">
-            <li>Saltwater fish and coral focus</li>
-            <li>In-store equipment and supply guidance</li>
-            <li>Serving Tinley Park and surrounding communities</li>
-          </ul>
-        </div>
+        </article>
+        <article class="hero-slide" style="--hero-bg:url('assets/images/hero-2.jpg')">
+          <div class="hero-overlay"></div>
+          <div class="container hero-slide-content">
+            <p class="hero-kicker">Local Saltwater Shop - Professional Advice</p>
+            <h1>Premium livestock, practical answers, and no guesswork.</h1>
+            <p>
+              From beginner setups to advanced reef upgrades, Rob's team helps you pick
+              the right products for your actual tank goals.
+            </p>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#services">View Services</a>
+              <a
+                class="btn btn-secondary"
+                href="https://www.google.com/maps/dir/?api=1&destination=17135+S+Harlem+Ave+Tinley+Park+IL+60477"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Get Directions
+              </a>
+            </div>
+          </div>
+        </article>
+        <article class="hero-slide" style="--hero-bg:url('assets/images/gallery-2.jpg')">
+          <div class="hero-overlay"></div>
+          <div class="container hero-slide-content">
+            <p class="hero-kicker">Aquarium Installment + Partnered Setup Support</p>
+            <h1>Your next aquarium project, planned and finished right.</h1>
+            <p>
+              Need installation help too? We can coordinate with trusted local partners
+              so your system launch is smooth from day one.
+            </p>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#aquarium-installment">Installation Info</a>
+              <a class="btn btn-secondary" href="#testimonials">Read Reviews</a>
+            </div>
+          </div>
+        </article>
 
-        <div class="hero-media" aria-hidden="true">
-          <img src="assets/images/hero-1.jpg" alt="">
-          <img src="assets/images/hero-2.jpg" alt="">
-        </div>
+        <button class="slider-control hero-prev" type="button" aria-label="Previous banner slide">
+          <span aria-hidden="true">‹</span>
+        </button>
+        <button class="slider-control hero-next" type="button" aria-label="Next banner slide">
+          <span aria-hidden="true">›</span>
+        </button>
+        <div class="slider-dots hero-dots" aria-label="Banner pagination"></div>
       </div>
     </section>
 
@@ -242,36 +273,84 @@
       </div>
     </section>
 
-    <section id="imagery" class="section">
-      <div class="container">
-        <p class="eyebrow">Imagery</p>
-        <h2>Inside Rob's Aquatics</h2>
-        <p class="section-intro">
-          A quick look at the store's saltwater-focused environment, display systems, and livestock showcases.
-        </p>
-
-        <div class="gallery">
-          <button class="gallery-item" type="button" data-image="assets/images/hero-1.jpg" data-alt="Aquarium display with coral and fish">
-            <img src="assets/images/hero-1.jpg" alt="Aquarium display with coral and fish">
-          </button>
-          <button class="gallery-item" type="button" data-image="assets/images/hero-2.jpg" data-alt="Large in-store saltwater tank">
-            <img src="assets/images/hero-2.jpg" alt="Large in-store saltwater tank">
-          </button>
-          <button class="gallery-item" type="button" data-image="assets/images/gallery-1.jpg" data-alt="Colorful reef tank close-up">
-            <img src="assets/images/gallery-1.jpg" alt="Colorful reef tank close-up">
-          </button>
-          <button class="gallery-item" type="button" data-image="assets/images/gallery-2.jpg" data-alt="Aquarium fish showcase">
-            <img src="assets/images/gallery-2.jpg" alt="Aquarium fish showcase">
-          </button>
-          <button class="gallery-item" type="button" data-image="assets/images/gallery-3.jpg" data-alt="Coral and rock arrangement">
-            <img src="assets/images/gallery-3.jpg" alt="Coral and rock arrangement">
-          </button>
-          <button class="gallery-item" type="button" data-image="assets/images/gallery-4.jpg" data-alt="Saltwater fish swimming through coral">
-            <img src="assets/images/gallery-4.jpg" alt="Saltwater fish swimming through coral">
-          </button>
-          <button class="gallery-item" type="button" data-image="assets/images/gallery-5.jpg" data-alt="Healthy marine aquarium setup">
-            <img src="assets/images/gallery-5.jpg" alt="Healthy marine aquarium setup">
-          </button>
+    <section id="imagery" class="section imagery-showcase">
+      <div class="container imagery-layout">
+        <div class="imagery-intro">
+          <p class="eyebrow">Imagery</p>
+          <h2>Explore our recent aquarium displays and setups.</h2>
+          <p>
+            A professional look at in-store tanks, livestock quality, and project-style
+            layout inspiration for hobbyists planning their next build.
+          </p>
+          <div class="imagery-metric">
+            <h3>200+</h3>
+            <p>Public reviews across Google, Facebook, and Yelp listings.</p>
+          </div>
+          <a
+            class="btn btn-secondary"
+            href="https://www.google.com/maps/place/Rob's+Aquatics"
+            target="_blank"
+            rel="noreferrer"
+          >
+            See More Reviews
+          </a>
+        </div>
+        <div class="imagery-carousel-shell">
+          <div id="imageryCarousel" class="imagery-carousel">
+            <div class="imagery-viewport">
+              <div class="imagery-track">
+                <button class="imagery-card" type="button" data-image="assets/images/hero-1.jpg" data-alt="Reef display aquarium with colorful coral">
+                  <img src="assets/images/hero-1.jpg" alt="Reef display aquarium with colorful coral">
+                  <span class="imagery-overlay">
+                    <strong>Reef Display Build</strong>
+                    <em>Coral-forward saltwater setup</em>
+                  </span>
+                </button>
+                <button class="imagery-card" type="button" data-image="assets/images/hero-2.jpg" data-alt="Large marine aquarium with fish">
+                  <img src="assets/images/hero-2.jpg" alt="Large marine aquarium with fish">
+                  <span class="imagery-overlay">
+                    <strong>Show Tank Layout</strong>
+                    <em>Balanced flow and filtration planning</em>
+                  </span>
+                </button>
+                <button class="imagery-card" type="button" data-image="assets/images/gallery-1.jpg" data-alt="Colorful reef tank close up">
+                  <img src="assets/images/gallery-1.jpg" alt="Colorful reef tank close up">
+                  <span class="imagery-overlay">
+                    <strong>Coral Health Snapshot</strong>
+                    <em>Strong color and clean water results</em>
+                  </span>
+                </button>
+                <button class="imagery-card" type="button" data-image="assets/images/gallery-2.jpg" data-alt="In-store fish showcase">
+                  <img src="assets/images/gallery-2.jpg" alt="In-store fish showcase">
+                  <span class="imagery-overlay">
+                    <strong>Livestock Showcase</strong>
+                    <em>Quality fish selection for hobbyists</em>
+                  </span>
+                </button>
+                <button class="imagery-card" type="button" data-image="assets/images/gallery-3.jpg" data-alt="Aquarium rock and coral arrangement">
+                  <img src="assets/images/gallery-3.jpg" alt="Aquarium rock and coral arrangement">
+                  <span class="imagery-overlay">
+                    <strong>Aquascape Detail</strong>
+                    <em>Rockwork and compatibility planning</em>
+                  </span>
+                </button>
+                <button class="imagery-card" type="button" data-image="assets/images/gallery-4.jpg" data-alt="Saltwater fish among corals">
+                  <img src="assets/images/gallery-4.jpg" alt="Saltwater fish among corals">
+                  <span class="imagery-overlay">
+                    <strong>Stock + System Match</strong>
+                    <em>Healthy fish in stable environments</em>
+                  </span>
+                </button>
+              </div>
+            </div>
+            <button class="slider-control imagery-prev" type="button" aria-label="Previous imagery slide">
+              <span aria-hidden="true">‹</span>
+            </button>
+            <button class="slider-control imagery-next" type="button" aria-label="Next imagery slide">
+              <span aria-hidden="true">›</span>
+            </button>
+          </div>
+          <div id="imageryDots" class="slider-dots imagery-dots" aria-label="Imagery pagination"></div>
         </div>
       </div>
     </section>
@@ -279,94 +358,101 @@
     <section id="testimonials" class="section section-alt testimonials-section">
       <div class="container">
         <p class="eyebrow">Testimonials</p>
-        <h2>What local hobbyists are saying.</h2>
+        <h2>What our customers say.</h2>
         <p class="section-intro">
-          Public review highlights from Google, Facebook, and Yelp listings shown through the Google Maps business profile.
+          Verified public review highlights from Google, Facebook, and Yelp surfaces shown through the Google Maps business profile.
         </p>
-        <div id="testimonialSlider" class="testimonial-slider" aria-label="Customer testimonial slider">
-          <button class="slider-control slider-control-prev" type="button" aria-label="Previous testimonials">
-            <span aria-hidden="true">‹</span>
-          </button>
-          <div class="testimonial-viewport">
-            <div class="testimonial-track">
-              <article class="testimonial-card testimonial-slide">
-                <div class="testimonial-meta">
-                  <span class="platform-badge badge-google">Google</span>
-                  <span class="reviewer">Patrick James</span>
-                </div>
+        <div id="testimonialCarousel" class="testimonial-carousel-pro" aria-label="Customer reviews carousel">
+          <div class="testimonial-viewport-pro">
+            <div class="testimonial-track-pro">
+              <article class="testimonial-panel">
+                <div class="review-stars" aria-label="5 star review">★★★★★</div>
                 <p class="quote">"By far the best shop in town. Rob and his team are extremely helpful, and everything in store is healthy and thriving. A+"</p>
-              </article>
-              <article class="testimonial-card testimonial-slide">
-                <div class="testimonial-meta">
-                  <span class="platform-badge badge-google">Google</span>
-                  <span class="reviewer">Tony Smith</span>
+                <div class="reviewer-row">
+                  <span class="review-avatar" data-initials="PJ" aria-hidden="true"></span>
+                  <div class="reviewer-meta">
+                    <h3>Patrick James</h3>
+                    <span>Google Review</span>
+                  </div>
                 </div>
+              </article>
+              <article class="testimonial-panel">
+                <div class="review-stars" aria-label="5 star review">★★★★★</div>
                 <p class="quote">"Experienced, nice team to work with."</p>
-              </article>
-              <article class="testimonial-card testimonial-slide">
-                <div class="testimonial-meta">
-                  <span class="platform-badge badge-google">Google</span>
-                  <span class="reviewer">Google Maps profile summary</span>
+                <div class="reviewer-row">
+                  <span class="review-avatar" data-initials="TS" aria-hidden="true"></span>
+                  <div class="reviewer-meta">
+                    <h3>Tony Smith</h3>
+                    <span>Google Review</span>
+                  </div>
                 </div>
-                <p class="quote">"4.5 stars and 200+ total reviews, with repeat mentions of knowledgeable staff and dependable customer service."</p>
               </article>
-              <article class="testimonial-card testimonial-slide">
-                <div class="testimonial-meta">
-                  <span class="platform-badge badge-yelp">Yelp</span>
-                  <span class="reviewer">Yelp review via Google Maps panel</span>
-                </div>
+              <article class="testimonial-panel">
+                <div class="review-stars" aria-label="5 star review">★★★★★</div>
                 <p class="quote">"If you have any interest in starting a saltwater tank, make sure you stop and talk to Rob."</p>
-              </article>
-              <article class="testimonial-card testimonial-slide">
-                <div class="testimonial-meta">
-                  <span class="platform-badge badge-yelp">Yelp</span>
-                  <span class="reviewer">Yelp review via Google Maps panel</span>
+                <div class="reviewer-row">
+                  <span class="review-avatar" data-initials="YR" aria-hidden="true"></span>
+                  <div class="reviewer-meta">
+                    <h3>Yelp Reviewer</h3>
+                    <span>Yelp Review via Google Maps Panel</span>
+                  </div>
                 </div>
+              </article>
+              <article class="testimonial-panel">
+                <div class="review-stars" aria-label="5 star review">★★★★★</div>
                 <p class="quote">"Great place. The owner and staff are down to earth and always take time to answer questions."</p>
-              </article>
-              <article class="testimonial-card testimonial-slide">
-                <div class="testimonial-meta">
-                  <span class="platform-badge badge-yelp">Yelp</span>
-                  <span class="reviewer">Yelp review via Google Maps panel</span>
+                <div class="reviewer-row">
+                  <span class="review-avatar" data-initials="YR" aria-hidden="true"></span>
+                  <div class="reviewer-meta">
+                    <h3>Yelp Reviewer</h3>
+                    <span>Yelp Review via Google Maps Panel</span>
+                  </div>
                 </div>
-                <p class="quote">"10 out of 10 since the day Rob opened the door. Always a fishy relationship in the best way."</p>
               </article>
-              <article class="testimonial-card testimonial-slide">
-                <div class="testimonial-meta">
-                  <span class="platform-badge badge-facebook">Facebook</span>
-                  <span class="reviewer">ToddandTiffany Chellino</span>
+              <article class="testimonial-panel">
+                <div class="review-stars" aria-label="5 star review">★★★★★</div>
+                <p class="quote">"Best saltwater shop around. They explain everything clearly and never push what you don't need."</p>
+                <div class="reviewer-row">
+                  <span class="review-avatar" data-initials="TC" aria-hidden="true"></span>
+                  <div class="reviewer-meta">
+                    <h3>ToddandTiffany Chellino</h3>
+                    <span>Facebook Recommendation</span>
+                  </div>
                 </div>
-                <p class="quote">"Best saltwater shop around. They explain everything clearly, recommend what actually fits your tank, and never push what you don't need."</p>
               </article>
-              <article class="testimonial-card testimonial-slide">
-                <div class="testimonial-meta">
-                  <span class="platform-badge badge-facebook">Facebook</span>
-                  <span class="reviewer">Dave Martin</span>
-                </div>
+              <article class="testimonial-panel">
+                <div class="review-stars" aria-label="5 star review">★★★★★</div>
                 <p class="quote">"Great knowledge and great customer service. Super patient with beginners to salt and reef."</p>
-              </article>
-              <article class="testimonial-card testimonial-slide">
-                <div class="testimonial-meta">
-                  <span class="platform-badge badge-facebook">Facebook</span>
-                  <span class="reviewer">Christopher Dykstra</span>
+                <div class="reviewer-row">
+                  <span class="review-avatar" data-initials="DM" aria-hidden="true"></span>
+                  <div class="reviewer-meta">
+                    <h3>Dave Martin</h3>
+                    <span>Facebook Recommendation</span>
+                  </div>
                 </div>
+              </article>
+              <article class="testimonial-panel">
+                <div class="review-stars" aria-label="5 star review">★★★★★</div>
                 <p class="quote">"Great selection and knowledgeable staff."</p>
-              </article>
-              <article class="testimonial-card testimonial-slide">
-                <div class="testimonial-meta">
-                  <span class="platform-badge badge-facebook">Facebook</span>
-                  <span class="reviewer">Steve Munoz</span>
+                <div class="reviewer-row">
+                  <span class="review-avatar" data-initials="CD" aria-hidden="true"></span>
+                  <div class="reviewer-meta">
+                    <h3>Christopher Dykstra</h3>
+                    <span>Facebook Recommendation</span>
+                  </div>
                 </div>
-                <p class="quote">"I drive all the way from the north side of Chicago to Tinley because the customer service and pricing are hard to beat."</p>
               </article>
             </div>
           </div>
-          <button class="slider-control slider-control-next" type="button" aria-label="Next testimonials">
+          <button class="slider-control testimonial-prev" type="button" aria-label="Previous testimonial">
+            <span aria-hidden="true">‹</span>
+          </button>
+          <button class="slider-control testimonial-next" type="button" aria-label="Next testimonial">
             <span aria-hidden="true">›</span>
           </button>
         </div>
-        <div id="testimonialDots" class="slider-dots" aria-label="Testimonial pages"></div>
-        <p class="testimonial-source-note">Review snippets are pulled from public Google Maps business profile surfaces and linked platform listings.</p>
+        <div id="testimonialDotsPro" class="slider-dots" aria-label="Testimonial pages"></div>
+        <p class="testimonial-source-note">Review text shown from public Google Maps profile surfaces and linked Google, Facebook, and Yelp listings.</p>
       </div>
     </section>
 
@@ -469,6 +555,10 @@
     <button id="closeModal" class="modal-close" type="button" aria-label="Close image viewer">Close</button>
     <img id="modalImage" src="" alt="">
   </dialog>
+
+  <button id="scrollTopBtn" class="scroll-top-btn" type="button" aria-label="Scroll to top">
+    <span aria-hidden="true">↑</span>
+  </button>
 
   <script src="assets/js/main.js"></script>
 </body>
