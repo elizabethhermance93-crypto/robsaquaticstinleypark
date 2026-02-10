@@ -78,19 +78,20 @@ img {
   align-items: center;
   justify-content: space-between;
   gap: 1.15rem;
-  min-height: 86px;
+  min-height: 72px;
 }
 
 .brand {
   display: inline-flex;
   align-items: center;
-  padding-block: 0.45rem;
+  padding-block: 0.15rem;
 }
 
 .brand img {
-  width: clamp(155px, 22vw, 235px);
+  width: clamp(122px, 18vw, 182px);
   height: auto;
-  border-radius: 0.3rem;
+  border-radius: 0;
+  background: transparent;
 }
 
 .menu-toggle {
@@ -126,10 +127,10 @@ img {
   align-items: center;
   color: #d7e9f0;
   text-decoration: none;
-  font-size: 0.92rem;
+  font-size: 0.88rem;
   font-weight: 600;
   letter-spacing: 0.01em;
-  padding: 0.5rem 0.8rem;
+  padding: 0.4rem 0.7rem;
   border-radius: 999px;
 }
 
@@ -397,16 +398,65 @@ p {
   gap: 0.9rem;
 }
 
+.testimonial-grid-casual {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
 .testimonial-card {
   border: 1px solid var(--border);
   border-radius: 0.95rem;
-  background: rgba(10, 32, 44, 0.95);
-  padding: 1rem;
+  background: rgba(8, 27, 38, 0.95);
+  padding: 1.05rem;
+  min-height: 170px;
+}
+
+.testimonial-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.7rem;
+}
+
+.platform-badge {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.73rem;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  padding: 0.28rem 0.55rem;
+  border-radius: 999px;
+}
+
+.badge-google {
+  color: #102127;
+  background: #80c6f4;
+}
+
+.badge-facebook {
+  color: #e7f0ff;
+  background: #3057a7;
+}
+
+.badge-yelp {
+  color: #fff2f2;
+  background: #be2f2f;
+}
+
+.reviewer {
+  color: #b8cfda;
+  font-weight: 700;
+  font-size: 0.82rem;
+  line-height: 1.2;
 }
 
 .quote {
-  margin-bottom: 0.85rem;
+  margin: 0;
   color: #e7f4fa;
+  font-size: 0.96rem;
 }
 
 .source {
@@ -586,8 +636,8 @@ textarea:focus {
 
 @media (max-width: 1000px) {
   .site-nav a {
-    font-size: 0.86rem;
-    padding-inline: 0.64rem;
+    font-size: 0.84rem;
+    padding-inline: 0.6rem;
   }
 
   .hero-grid,
@@ -615,7 +665,7 @@ textarea:focus {
     position: absolute;
     left: 0;
     right: 0;
-    top: 86px;
+    top: 72px;
     border-top: 1px solid rgba(145, 193, 211, 0.2);
     border-bottom: 1px solid rgba(145, 193, 211, 0.2);
     background: rgba(3, 18, 27, 0.98);
@@ -662,7 +712,8 @@ textarea:focus {
   }
 
   .card-grid,
-  .testimonial-grid {
+  .testimonial-grid,
+  .testimonial-grid-casual {
     grid-template-columns: 1fr;
   }
 
