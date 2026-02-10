@@ -78,7 +78,7 @@
   }
   </script>
 </head>
-<body>
+<body data-theme="light">
   <a class="skip-link" href="#main-content">Skip to main content</a>
 
   <header class="site-header" id="home">
@@ -112,20 +112,31 @@
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
+
+      <button
+        id="themeToggle"
+        class="theme-toggle"
+        type="button"
+        aria-pressed="false"
+        aria-label="Switch to dark mode"
+      >
+        <span class="theme-toggle-icon" aria-hidden="true">◐</span>
+        <span class="theme-toggle-label">Dark</span>
+      </button>
     </div>
   </header>
 
   <main id="main-content">
     <section class="hero-banner section" aria-label="Featured banner">
       <div id="heroSlider" class="hero-slider">
-        <article class="hero-slide is-active" style="--hero-bg:url('assets/images/hero-1.jpg')">
+        <article class="hero-slide is-active" style="--hero-bg:url('assets/images/gallery-5.jpg')">
           <div class="hero-overlay"></div>
           <div class="container hero-slide-content">
             <p class="hero-kicker">Rob's Aquatics - Serving Tinley Park Since 2010</p>
-            <h1>Saltwater systems that look incredible and stay healthy.</h1>
+            <h1>Premium saltwater products and livestock for serious hobbyists.</h1>
             <p>
-              Build your dream aquarium with trusted local guidance on fish, coral, filtration,
-              and long-term tank stability.
+              From reef-ready fish to must-have tank supplies, we help you choose products
+              that keep your aquarium healthy and visually impressive.
             </p>
             <div class="hero-actions">
               <a class="btn btn-primary" href="#contact">Discover More</a>
@@ -133,14 +144,14 @@
             </div>
           </div>
         </article>
-        <article class="hero-slide" style="--hero-bg:url('assets/images/hero-2.jpg')">
+        <article class="hero-slide" style="--hero-bg:url('assets/images/gallery-3.jpg')">
           <div class="hero-overlay"></div>
           <div class="container hero-slide-content">
-            <p class="hero-kicker">Local Saltwater Shop - Professional Advice</p>
-            <h1>Premium livestock, practical answers, and no guesswork.</h1>
+            <p class="hero-kicker">Product-First Selection - Expert Guidance</p>
+            <h1>Get the right coral, fish, and equipment the first time.</h1>
             <p>
-              From beginner setups to advanced reef upgrades, Rob's team helps you pick
-              the right products for your actual tank goals.
+              We guide beginners and advanced reef keepers with practical, no-pressure
+              recommendations built around real tank performance.
             </p>
             <div class="hero-actions">
               <a class="btn btn-primary" href="#services">View Services</a>
@@ -155,14 +166,14 @@
             </div>
           </div>
         </article>
-        <article class="hero-slide" style="--hero-bg:url('assets/images/gallery-2.jpg')">
+        <article class="hero-slide" style="--hero-bg:url('assets/images/hero-1.jpg')">
           <div class="hero-overlay"></div>
           <div class="container hero-slide-content">
-            <p class="hero-kicker">Aquarium Installment + Partnered Setup Support</p>
-            <h1>Your next aquarium project, planned and finished right.</h1>
+            <p class="hero-kicker">Aquarium Installment + Setup Support</p>
+            <h1>Your next aquarium project, planned with the right products.</h1>
             <p>
-              Need installation help too? We can coordinate with trusted local partners
-              so your system launch is smooth from day one.
+              Need installation help too? We coordinate with trusted local partners
+              so your product choices and system launch are smooth from day one.
             </p>
             <div class="hero-actions">
               <a class="btn btn-primary" href="#aquarium-installment">Installation Info</a>
@@ -178,6 +189,17 @@
           <span aria-hidden="true">›</span>
         </button>
         <div class="slider-dots hero-dots" aria-label="Banner pagination"></div>
+      </div>
+    </section>
+
+    <section class="payment-strip" aria-label="Accepted payment options">
+      <div class="container payment-strip-inner">
+        <p class="payment-title">Payment Options</p>
+        <ul class="payment-options">
+          <li class="payment-chip payment-chip-visa" aria-label="Visa accepted">VISA</li>
+          <li class="payment-chip payment-chip-mastercard" aria-label="Mastercard accepted">Mastercard</li>
+          <li class="payment-chip payment-chip-discover" aria-label="Discover accepted">Discover</li>
+        </ul>
       </div>
     </section>
 
