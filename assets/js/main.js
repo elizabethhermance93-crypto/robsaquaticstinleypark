@@ -142,20 +142,9 @@ function initializeTestimonialSlider() {
   }
 
   let pageIndex = 0;
-  let cardsPerPage = 3;
-  let pageCount = 1;
+  let pageCount = slides.length;
   let autoplayTimer = null;
   const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-  const getCardsPerPage = () => {
-    if (window.innerWidth <= 620) {
-      return 1;
-    }
-    if (window.innerWidth <= 1000) {
-      return 2;
-    }
-    return 3;
-  };
 
   const setControlState = () => {
     const disableControls = pageCount <= 1;
@@ -181,17 +170,14 @@ function initializeTestimonialSlider() {
     }
 
     pageIndex = ((newPage % pageCount) + pageCount) % pageCount;
-    const startCardIndex = pageIndex * cardsPerPage;
-    const targetCard = slides[startCardIndex] || slides[slides.length - 1];
-    if (!targetCard) {
-      return;
-    }
+    const viewport = testimonialSlider.querySelector(".testimonial-viewport");
+    const slideWidth = viewport ? viewport.clientWidth : slides[0].clientWidth;
 
     if (!animate) {
       track.style.transition = "none";
     }
 
-    track.style.transform = `translateX(-${targetCard.offsetLeft}px)`;
+    track.style.transform = `translateX(-${pageIndex * slideWidth}px)`;
 
     if (!animate) {
       requestAnimationFrame(() => {
@@ -222,8 +208,7 @@ function initializeTestimonialSlider() {
   };
 
   const recalculate = () => {
-    cardsPerPage = getCardsPerPage();
-    pageCount = Math.max(1, Math.ceil(slides.length / cardsPerPage));
+    pageCount = slides.length;
     pageIndex = Math.min(pageIndex, pageCount - 1);
     rebuildDots();
     goToPage(pageIndex, false);
@@ -243,7 +228,7 @@ function initializeTestimonialSlider() {
     }
     autoplayTimer = window.setInterval(() => {
       goToPage(pageIndex + 1);
-    }, 6500);
+    }, 6000);
   };
 
   prevButton.addEventListener("click", () => {
