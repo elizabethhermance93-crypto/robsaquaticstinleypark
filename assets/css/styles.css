@@ -440,7 +440,7 @@ p {
   inset: 0;
   background-image: var(--hero-bg);
   background-size: cover;
-  background-position: center;
+  background-position: var(--hero-pos, center);
   transform: scale(1.02);
   filter: saturate(1.08) brightness(0.9);
   transition: transform 8200ms ease, filter 8200ms ease;
@@ -550,70 +550,45 @@ p {
   margin-top: 0;
 }
 
-.payment-strip {
-  padding: 0.85rem 0;
-  border-top: 1px solid rgba(154, 200, 218, 0.2);
-  border-bottom: 1px solid rgba(154, 200, 218, 0.2);
-  background: rgba(7, 29, 40, 0.9);
+.footer-payment-block {
+  margin-top: 0.75rem;
+  margin-bottom: 0.45rem;
 }
 
-.payment-strip-inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 0.7rem 1rem;
-}
-
-.payment-title {
-  margin: 0;
-  color: #d5e8f1;
+.footer-payment-title {
+  margin: 0 0 0.55rem;
+  color: #cde4ee;
+  font-size: 0.82rem;
   font-weight: 700;
-  font-size: 0.94rem;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
-.payment-options {
+.footer-payment-list {
   list-style: none;
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
   gap: 0.5rem;
   margin: 0;
   padding: 0;
 }
 
-.payment-chip {
+.footer-payment-list li {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-width: 96px;
-  min-height: 34px;
-  border-radius: 0.55rem;
-  border: 1px solid rgba(158, 203, 220, 0.35);
-  background: rgba(10, 37, 50, 0.92);
-  color: #ecf8fc;
-  font-size: 0.8rem;
-  font-weight: 800;
-  letter-spacing: 0.02em;
-  text-transform: uppercase;
-  padding: 0.25rem 0.65rem;
+  padding: 0.12rem;
+  border-radius: 0.66rem;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(145, 194, 212, 0.2);
 }
 
-.payment-chip-visa {
-  border-color: rgba(97, 156, 255, 0.6);
-  color: #b8d2ff;
-}
-
-.payment-chip-mastercard {
-  border-color: rgba(255, 170, 92, 0.6);
-  color: #ffd0a2;
-  text-transform: none;
-}
-
-.payment-chip-discover {
-  border-color: rgba(255, 184, 95, 0.62);
-  color: #ffe1bf;
-  text-transform: none;
+.footer-payment-list img {
+  width: 102px;
+  height: 35px;
+  object-fit: contain;
+  display: block;
 }
 
 .slider-dot {
@@ -1147,35 +1122,14 @@ body[data-theme="light"] .hero-slide-content p {
   color: #f3fbff;
 }
 
-body[data-theme="light"] .payment-strip {
-  background: #ecf6fb;
-  border-top-color: rgba(132, 180, 200, 0.5);
-  border-bottom-color: rgba(132, 180, 200, 0.5);
+body[data-theme="light"] .footer-payment-title {
+  color: #335a6f;
 }
 
-body[data-theme="light"] .payment-title {
-  color: #2a4d60;
-}
-
-body[data-theme="light"] .payment-chip {
-  background: #ffffff;
-  color: #2d4f62;
-  border-color: rgba(63, 114, 138, 0.3);
-}
-
-body[data-theme="light"] .payment-chip-visa {
-  color: #154aa6;
-  border-color: rgba(62, 122, 214, 0.45);
-}
-
-body[data-theme="light"] .payment-chip-mastercard {
-  color: #a7571c;
-  border-color: rgba(215, 136, 62, 0.45);
-}
-
-body[data-theme="light"] .payment-chip-discover {
-  color: #96510d;
-  border-color: rgba(210, 137, 59, 0.5);
+body[data-theme="light"] .footer-payment-list li {
+  background: rgba(255, 255, 255, 0.95);
+  border-color: rgba(98, 149, 172, 0.3);
+  box-shadow: 0 5px 12px rgba(18, 67, 90, 0.1);
 }
 
 body[data-theme="light"] .slider-control {
@@ -1415,8 +1369,17 @@ body[data-theme="light"] .scroll-top-btn:hover {
     width: min(1120px, calc(100% - 1.35rem));
   }
 
-  .payment-strip-inner {
-    justify-content: center;
+  .footer-payment-title {
+    margin-bottom: 0.45rem;
+  }
+
+  .footer-payment-list {
+    gap: 0.4rem;
+  }
+
+  .footer-payment-list img {
+    width: 92px;
+    height: 32px;
   }
 
   .hero-slider,
