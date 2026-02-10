@@ -14,7 +14,65 @@ const imageryDots = document.getElementById("imageryDots");
 const testimonialCarousel = document.getElementById("testimonialCarousel");
 const testimonialDots = document.getElementById("testimonialDotsPro");
 const scrollTopButton = document.getElementById("scrollTopBtn");
+const themeToggle = document.getElementById("themeToggle");
+const themeToggleIcon = themeToggle?.querySelector(".theme-toggle-icon");
+const themeToggleLabel = themeToggle?.querySelector(".theme-toggle-label");
+const themeColorMeta = document.querySelector('meta[name="theme-color"]');
+const themeStorageKey = "rob-aquatics-theme";
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+function applyTheme(theme) {
+  const resolvedTheme = theme === "dark" ? "dark" : "light";
+  document.body.setAttribute("data-theme", resolvedTheme);
+
+  if (themeColorMeta) {
+    themeColorMeta.setAttribute("content", resolvedTheme === "dark" ? "#0f2f3f" : "#f4f9fc");
+  }
+
+  if (!themeToggle) {
+    return;
+  }
+
+  const isDark = resolvedTheme === "dark";
+  themeToggle.setAttribute("aria-pressed", String(isDark));
+  themeToggle.setAttribute("aria-label", isDark ? "Switch to light mode" : "Switch to dark mode");
+
+  if (themeToggleLabel) {
+    themeToggleLabel.textContent = isDark ? "Light" : "Dark";
+  }
+  if (themeToggleIcon) {
+    themeToggleIcon.textContent = isDark ? "☀" : "◐";
+  }
+}
+
+function initializeThemeToggle() {
+  let savedTheme = "light";
+  try {
+    const storedTheme = window.localStorage.getItem(themeStorageKey);
+    if (storedTheme) {
+      savedTheme = storedTheme;
+    }
+  } catch (error) {
+    savedTheme = "light";
+  }
+
+  applyTheme(savedTheme);
+
+  if (!themeToggle) {
+    return;
+  }
+
+  themeToggle.addEventListener("click", () => {
+    const currentTheme = document.body.getAttribute("data-theme");
+    const nextTheme = currentTheme === "dark" ? "light" : "dark";
+    applyTheme(nextTheme);
+    try {
+      window.localStorage.setItem(themeStorageKey, nextTheme);
+    } catch (error) {
+      // Ignore localStorage failures to avoid breaking toggle interaction.
+    }
+  });
+}
 
 if (currentYear) {
   currentYear.textContent = String(new Date().getFullYear());
@@ -379,6 +437,7 @@ function initializeScrollTopButton() {
   });
 }
 
+initializeThemeToggle();
 initializeFadeSlider(heroSlider);
 initializeTrackSlider({
   root: imageryCarousel,
