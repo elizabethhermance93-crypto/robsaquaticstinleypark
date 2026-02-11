@@ -14,6 +14,7 @@ const imageryDots = document.getElementById("imageryDots");
 const testimonialCarousel = document.getElementById("testimonialCarousel");
 const testimonialDots = document.getElementById("testimonialDotsPro");
 const scrollTopButton = document.getElementById("scrollTopBtn");
+const paymentIcons = [...document.querySelectorAll(".payment-icon")];
 const themeToggle = document.getElementById("themeToggle");
 const themeToggleIcon = themeToggle?.querySelector(".theme-toggle-icon");
 const themeToggleLabel = themeToggle?.querySelector(".theme-toggle-label");
@@ -24,6 +25,16 @@ const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").match
 function applyTheme(theme) {
   const resolvedTheme = theme === "dark" ? "dark" : "light";
   document.body.setAttribute("data-theme", resolvedTheme);
+
+  // Ensure exactly one payment icon set per theme.
+  paymentIcons.forEach((icon) => {
+    const nextSrc = resolvedTheme === "dark"
+      ? icon.dataset.darkSrc
+      : icon.dataset.lightSrc;
+    if (nextSrc && icon.getAttribute("src") !== nextSrc) {
+      icon.setAttribute("src", nextSrc);
+    }
+  });
 
   if (themeColorMeta) {
     themeColorMeta.setAttribute("content", resolvedTheme === "dark" ? "#0f2f3f" : "#f4f9fc");
