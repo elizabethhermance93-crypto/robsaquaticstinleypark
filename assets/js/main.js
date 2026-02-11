@@ -20,6 +20,7 @@ const themeToggleIcon = themeToggle?.querySelector(".theme-toggle-icon");
 const themeToggleLabel = themeToggle?.querySelector(".theme-toggle-label");
 const themeColorMeta = document.querySelector('meta[name="theme-color"]');
 const themeStorageKey = "rob-aquatics-theme";
+const contactRecipientEmail = "nhermanc@gmail.com";
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 function applyTheme(theme) {
@@ -150,7 +151,7 @@ if (contactForm) {
     const body = encodeURIComponent(
       `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`
     );
-    window.location.href = `mailto:robsaquatics@yahoo.com?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:${contactRecipientEmail}?subject=${subject}&body=${body}`;
 
     if (formFeedback) {
       formFeedback.textContent = "Opening your email app now...";
