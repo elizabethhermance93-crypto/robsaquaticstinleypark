@@ -21,6 +21,7 @@ const themeToggleLabel = themeToggle?.querySelector(".theme-toggle-label");
 const themeColorMeta = document.querySelector('meta[name="theme-color"]');
 const themeStorageKey = "rob-aquatics-theme";
 const contactRecipientEmail = "nhermanc@gmail.com";
+const contactSubmissionEndpoint = `https://formsubmit.co/ajax/${contactRecipientEmail}`;
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 function applyTheme(theme) {
@@ -133,7 +134,9 @@ if (sections.length) {
 }
 
 if (contactForm) {
-  contactForm.addEventListener("submit", (event) => {
+  const submitButton = contactForm.querySelector('button[type="submit"]');
+
+  contactForm.addEventListener("submit", async (event) => {
     event.preventDefault();
     const name = String(document.getElementById("name")?.value || "").trim();
     const email = String(document.getElementById("email")?.value || "").trim();
@@ -147,15 +150,53 @@ if (contactForm) {
       return;
     }
 
-    const subject = encodeURIComponent(`Website inquiry from ${name}`);
-    const body = encodeURIComponent(
-      `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`
-    );
-    window.location.href = `mailto:${contactRecipientEmail}?subject=${subject}&body=${body}`;
+    if (submitButton) {
+      submitButton.disabled = true;
+      submitButton.setAttribute("aria-busy", "true");
+    }
 
     if (formFeedback) {
-      formFeedback.textContent = "Opening your email app now...";
+      formFeedback.textContent = "Sending your message...";
       formFeedback.style.color = "#9ce6a0";
+    }
+
+    try {
+      const response = await fetch(contactSubmissionEndpoint, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json"
+        },
+        body: JSON.stringify({
+          name,
+          email,
+          message,
+          _subject: `Website inquiry from ${name}`,
+          _captcha: "false"
+        })
+      });
+
+      const result = await response.json().catch(() => ({}));
+      const isSuccess = response.ok && (result.success === "true" || result.success === true);
+      if (!isSuccess) {
+        throw new Error("Submission failed");
+      }
+
+      if (formFeedback) {
+        formFeedback.textContent = "Thanks! Your message was sent successfully.";
+        formFeedback.style.color = "#9ce6a0";
+      }
+      contactForm.reset();
+    } catch (error) {
+      if (formFeedback) {
+        formFeedback.textContent = "Unable to send right now. Please call (708) 444-7627.";
+        formFeedback.style.color = "#f6b4b4";
+      }
+    } finally {
+      if (submitButton) {
+        submitButton.disabled = false;
+        submitButton.removeAttribute("aria-busy");
+      }
     }
   });
 }
