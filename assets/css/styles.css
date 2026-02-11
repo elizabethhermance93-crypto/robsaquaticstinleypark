@@ -629,10 +629,6 @@ p {
   padding: 0;
 }
 
-.footer-payment-list-white {
-  display: none;
-}
-
 .footer-payment-list li {
   display: inline-flex;
   align-items: center;
@@ -650,14 +646,6 @@ p {
   height: auto;
   object-fit: contain;
   display: block;
-}
-
-body[data-theme="dark"] .footer-payment-list-standard {
-  display: none;
-}
-
-body[data-theme="dark"] .footer-payment-list-white {
-  display: flex;
 }
 
 .slider-dot {
@@ -1237,14 +1225,6 @@ body[data-theme="light"] .footer-payment-list li {
   background: rgba(255, 255, 255, 0.95);
   border-color: rgba(98, 149, 172, 0.3);
   box-shadow: 0 5px 12px rgba(18, 67, 90, 0.1);
-}
-
-body[data-theme="light"] .footer-payment-list-standard {
-  display: flex;
-}
-
-body[data-theme="light"] .footer-payment-list-white {
-  display: none;
 }
 
 body[data-theme="light"] .slider-control {
