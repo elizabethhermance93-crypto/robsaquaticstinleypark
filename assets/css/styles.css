@@ -186,12 +186,38 @@ img {
   letter-spacing: 0.01em;
   padding: 0.4rem 0.7rem;
   border-radius: 999px;
+  position: relative;
+  overflow: hidden;
+  transition: transform 220ms ease, color 220ms ease, background 220ms ease, box-shadow 220ms ease;
+}
+
+.site-nav a::after {
+  content: "";
+  position: absolute;
+  left: 0.65rem;
+  right: 0.65rem;
+  bottom: 0.28rem;
+  height: 2px;
+  border-radius: 999px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left center;
+  opacity: 0.7;
+  transition: transform 220ms ease, opacity 220ms ease;
 }
 
 .site-nav a:hover,
 .site-nav a.active {
   color: #05222f;
   background: var(--primary);
+  transform: translateY(-2px);
+  box-shadow: 0 9px 20px rgba(0, 0, 0, 0.2);
+}
+
+.site-nav a:hover::after,
+.site-nav a.active::after {
+  transform: scaleX(1);
+  opacity: 1;
 }
 
 .section {
@@ -821,19 +847,8 @@ p {
   color: #eaf6fb;
   font-size: clamp(0.94rem, 1.02vw, 1.02rem);
   line-height: 1.7;
-  padding-left: 1.1rem;
-  position: relative;
+  padding-left: 0;
   flex: 1;
-}
-
-.testimonial-panel .quote::before {
-  content: "“";
-  position: absolute;
-  left: 0;
-  top: -0.2rem;
-  color: #79d8ee;
-  font-size: 1.35rem;
-  font-weight: 800;
 }
 
 .reviewer-row {
