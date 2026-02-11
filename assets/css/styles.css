@@ -191,6 +191,10 @@ img {
   transition: transform 220ms ease, color 220ms ease, background 220ms ease, box-shadow 220ms ease;
 }
 
+.site-nav a.nav-nowrap {
+  white-space: nowrap;
+}
+
 .site-nav a:hover,
 .site-nav a.active {
   color: #05222f;
@@ -460,10 +464,18 @@ p {
 
 .services-note {
   margin-top: 1.15rem;
-  max-width: min(76ch, 100%);
+  max-width: none;
+  width: 100%;
   font-size: clamp(0.96rem, 1.1vw, 1.04rem);
   line-height: 1.75;
-  text-wrap: balance;
+  text-wrap: pretty;
+  white-space: nowrap;
+}
+
+@media (max-width: 1180px) {
+  .services-note {
+    white-space: normal;
+  }
 }
 
 .section-intro {
