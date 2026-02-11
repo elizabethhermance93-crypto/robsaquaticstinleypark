@@ -458,6 +458,10 @@ p {
   color: #c9dce7;
 }
 
+.services-note {
+  margin-top: 1.15rem;
+}
+
 .section-intro {
   max-width: 68ch;
 }
