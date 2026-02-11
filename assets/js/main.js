@@ -20,7 +20,7 @@ const themeToggleIcon = themeToggle?.querySelector(".theme-toggle-icon");
 const themeToggleLabel = themeToggle?.querySelector(".theme-toggle-label");
 const themeColorMeta = document.querySelector('meta[name="theme-color"]');
 const themeStorageKey = "rob-aquatics-theme";
-const contactRecipientEmail = "nhermanc@gmail.com";
+const contactRecipientEmail = "robsaquatics@yahoo.com";
 const contactSubmissionEndpoint = `https://formsubmit.co/ajax/${contactRecipientEmail}`;
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
