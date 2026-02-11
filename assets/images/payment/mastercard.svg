@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="150" height="52" viewBox="0 0 150 52" role="img" aria-labelledby="mcTitle mcDesc">
-  <title id="mcTitle">Mastercard accepted</title>
-  <desc id="mcDesc">Mastercard payment card icon</desc>
-  <rect x="1" y="1" width="148" height="50" rx="9" fill="#ffffff" stroke="#d6e3eb" stroke-width="2"/>
-  <circle cx="65" cy="26" r="13.5" fill="#ea001b"/>
-  <circle cx="85" cy="26" r="13.5" fill="#ff9900"/>
-  <path d="M74.8 13.5a13.5 13.5 0 0 1 0 25A13.5 13.5 0 0 1 74.8 13.5z" fill="#ff5f00"/>
-  <text x="75" y="44" text-anchor="middle" font-family="Arial, sans-serif" font-size="9.4" font-weight="700" fill="#243341">mastercard</text>
-</svg>
