@@ -457,6 +457,14 @@ initializeTrackSlider({
   nextSelector: ".testimonial-next",
   dotsContainer: testimonialDots,
   autoplayMs: 6000,
-  getItemsPerView: () => 1
+  getItemsPerView: () => {
+    if (window.innerWidth <= 620) {
+      return 1;
+    }
+    if (window.innerWidth <= 1000) {
+      return 2;
+    }
+    return 3;
+  }
 });
 initializeScrollTopButton();
