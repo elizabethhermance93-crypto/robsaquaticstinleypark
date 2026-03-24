@@ -105,7 +105,7 @@ if (menuToggle && siteNav) {
   });
 }
 
-const sectionIds = ["home", "about", "aquarium-installment", "services", "imagery", "testimonials", "faq", "tour-360", "contact"];
+const sectionIds = ["home", "about", "aquarium-installation", "services", "imagery", "testimonials", "faq", "tour-360", "contact"];
 const sections = sectionIds
   .map((id) => document.getElementById(id))
   .filter(Boolean);
