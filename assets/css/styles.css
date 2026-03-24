@@ -513,10 +513,7 @@ p {
   height: 100%;
   object-fit: cover;
   object-position: var(--hero-pos, center);
-  /* translate nudges the visible crop (fish) relative to text; scale keeps Ken Burns zoom */
-  transform: translate(var(--hero-translate-x, 0%), var(--hero-translate-y, 0%))
-    scale(var(--hero-scale-from, 1.02));
-  transform-origin: center center;
+  transform: scale(1.02);
   opacity: 1;
   filter: saturate(1.08) brightness(0.9);
   transition: transform 8200ms ease, filter 8200ms ease;
@@ -524,8 +521,7 @@ p {
 }
 
 .hero-slide.is-active .hero-bg-image {
-  transform: translate(var(--hero-translate-x, 0%), var(--hero-translate-y, 0%))
-    scale(var(--hero-scale-to, 1.11));
+  transform: scale(1.11);
   filter: saturate(1.12) brightness(0.94);
 }
 
