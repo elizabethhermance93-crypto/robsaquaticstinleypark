@@ -513,7 +513,7 @@ p {
   height: 100%;
   object-fit: cover;
   object-position: var(--hero-pos, center);
-  transform: scale(1.02);
+  transform: scale(var(--hero-scale-from, 1.02));
   opacity: 1;
   filter: saturate(1.08) brightness(0.9);
   transition: transform 8200ms ease, filter 8200ms ease;
@@ -521,7 +521,7 @@ p {
 }
 
 .hero-slide.is-active .hero-bg-image {
-  transform: scale(1.11);
+  transform: scale(var(--hero-scale-to, 1.11));
   filter: saturate(1.12) brightness(0.94);
 }
 
