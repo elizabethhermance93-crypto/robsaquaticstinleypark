@@ -525,6 +525,52 @@ p {
   filter: saturate(1.12) brightness(0.94);
 }
 
+/* Ultrawide / very wide: taller hero so cover crops less; gentler zoom */
+@media (min-aspect-ratio: 2/1) {
+  .hero-slider,
+  .hero-slide-content {
+    min-height: max(
+      clamp(560px, 78vh, 820px),
+      min(920px, calc(100vw / 2.55))
+    );
+  }
+
+  .hero-bg-image {
+    transform: scale(1.015);
+  }
+
+  .hero-slide.is-active .hero-bg-image {
+    transform: scale(1.06);
+  }
+}
+
+/* Super-wide monitors: cap image width, center, match Ken Burns to translate + scale */
+@media (min-width: 2200px) {
+  .hero-bg-image {
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    right: auto;
+    width: min(100vw, 3000px);
+    height: 100%;
+    transform: translateX(-50%) scale(1.02);
+  }
+
+  .hero-slide.is-active .hero-bg-image {
+    transform: translateX(-50%) scale(1.08);
+  }
+}
+
+@media (min-width: 2200px) and (min-aspect-ratio: 2/1) {
+  .hero-bg-image {
+    transform: translateX(-50%) scale(1.015);
+  }
+
+  .hero-slide.is-active .hero-bg-image {
+    transform: translateX(-50%) scale(1.05);
+  }
+}
+
 .hero-overlay {
   position: absolute;
   inset: 0;
